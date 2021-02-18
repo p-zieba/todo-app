@@ -1,0 +1,39 @@
+<header class="bg-primary text-white">
+    <div class="container text-center">
+        <h1>Task List</h1>
+        <p class="lead">You can manage your tasks</p>
+    </div>
+</header>
+
+<section id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2>Add task</h2>
+                <p class="lead">You can add task:</p>
+                <form [formGroup]="form">
+                    <div class="input-group mb-3">
+                        <input class="form-control" formControlName="taskContent" placeholder="Task content" required type="text">
+                        <button class="btn btn-outline-secondary" (click)="addTask()" type="button">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2>Current task list <button type="button" class="btn btn-primary" (click)="addTask()">Add task</button></h2>
+                <p class="lead">This is a great place to check your tasks. Here they are:</p>
+                <ul>
+                    <li *ngFor="let task of tasks">
+                        <span [class.is-completed]="task.isCompleted" (click)="toggleTask(task)">{{ task.content }}</span> <button type="button" class="btn btn-danger" (click)="removeTask(task)">Remove</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

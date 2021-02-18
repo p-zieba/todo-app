@@ -1,0 +1,19 @@
+li {
+    & button {
+        margin-left: 10px;
+    }
+
+    & span:not(.is-completed):hover {
+        cursor: pointer;
+        text-decoration: line-through;
+    }
+    
+    & span.is-completed {
+        text-decoration: line-through;
+
+        &:hover {
+            cursor: pointer;
+            text-decoration: none;
+        }
+    }
+}
